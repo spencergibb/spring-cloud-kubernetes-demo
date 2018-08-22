@@ -1,34 +1,66 @@
 version: '3'
 
 networks:
-  servicenet:
+  servicenet-shadow:
+    driver: bridge
+  servicenet-prod:
     driver: bridge
 
 services:
-  api-gateway:
+####  DIFFY       #####
+##### PROD STACK  #####
+  api-gateway-prod:
     image: mrbwilms/api-gateway
     ports:
     - "8080:8080"
     networks:
     - servicenet
 
-  besteller-fashion:
+  besteller-fashion-prod:
     image: mrbwilms/bestseller-fashion
     ports:
     - "8082:8082"
     networks:
     - servicenet
 
-  bestseller-toys:
+  bestseller-toys-prod:
     image: mrbwilms/bestseller-toys
     ports:
     - "8081:8081"
     networks:
     - servicenet
 
-  hot-deals:
+  hot-deals-prod:
     image: mrbwilms/hot-deals
     ports:
     - "8083:8083"
+    networks:
+    - servicenet
+#####   SHADOW STACK #####
+  api-gateway-shadow:
+    image: mrbwilms/api-gateway
+    ports:
+    - "8080:9080"
+    networks:
+    - servicenet
+
+  besteller-fashion-shadow:
+    image: mrbwilms/bestseller-fashion
+    ports:
+    - "8082:9082"
+    networks:
+    - servicenet
+
+  bestseller-toys-shadow:
+    image: mrbwilms/bestseller-toys
+    ports:
+    - "8081:9081"
+    networks:
+    - servicenet
+
+  hot-deals-shadow:
+    image: mrbwilms/hot-deals
+    ports:
+    - "8083:9083"
     networks:
     - servicenet
