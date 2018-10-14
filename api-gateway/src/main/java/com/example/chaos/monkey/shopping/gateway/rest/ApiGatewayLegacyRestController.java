@@ -11,37 +11,28 @@ import com.example.chaos.monkey.shopping.gateway.services.FashionService;
 import com.example.chaos.monkey.shopping.gateway.services.HotDealsService;
 import com.example.chaos.monkey.shopping.gateway.services.ToysService;
 import com.netflix.hystrix.HystrixCommandGroupKey;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
-import java.util.Collections;
-import java.util.concurrent.ExecutionException;
+import java.util.List;
 import java.util.concurrent.Future;
 
 /**
  * @author Benjamin Wilms
  */
 @RestController
-public class ApiGatewayRestController {
+@RequestMapping("/legacy")
+public class ApiGatewayLegacyRestController {
 
     private final FashionService fashionService;
     private final ToysService toysService;
-    private RestTemplate restTemplate;
-    @Value("${rest.endpoint.fashion}")
-    private String urlFashion;
-    @Value("${rest.endpoint.toys}")
-    private String urlToys;
     private HotDealsService hotDealsService;
 
-
-    public ApiGatewayRestController(HotDealsService hotDealsService, FashionService fashionService, ToysService toysService) {
+    public ApiGatewayLegacyRestController(HotDealsService hotDealsService, FashionService fashionService, ToysService toysService) {
         this.hotDealsService = hotDealsService;
         this.fashionService = fashionService;
         this.toysService = toysService;
-        this.restTemplate = new RestTemplateBuilder().build();
     }
 
     @GetMapping("/startpage")
@@ -49,15 +40,11 @@ public class ApiGatewayRestController {
         Startpage page = new Startpage();
         long start = System.currentTimeMillis();
 
-        // Create Futures for requesting results
-        Future<ProductResponse> bestsellerFashionFuture = getBestsellerFashion();
-        Future<ProductResponse> bestsellerToysFuture = getBestsellerToys();
-        Future<ProductResponse> hotDealsFuture = getHotDeals();
 
         // Get Responses from Futures
-        page.setFashionResponse(extractResponse(bestsellerFashionFuture));
-        page.setToysResponse(extractResponse(bestsellerToysFuture));
-        page.setHotDealsResponse(extractResponse(hotDealsFuture));
+        page.setFashionResponse(extractResponse(fashionService.getFashionBestseller()));
+        page.setToysResponse(extractResponse(toysService.getToysBestseller()));
+        page.setHotDealsResponse(extractResponse(hotDealsService.getHotDeals()));
 
         // Summary
         page.setStatusFashion(page.getFashionResponse().getResponseType().name());
@@ -69,14 +56,9 @@ public class ApiGatewayRestController {
         return page;
     }
 
-    private ProductResponse extractResponse(Future<ProductResponse> responseFuture) {
-        try {
-            return responseFuture.get();
-        } catch (InterruptedException e) {
-            return new ProductResponse(ResponseType.ERROR, Collections.<Product>emptyList());
-        } catch (ExecutionException e) {
-            return new ProductResponse(ResponseType.ERROR, Collections.<Product>emptyList());
-        }
+    private ProductResponse extractResponse(List<Product> products) {
+        return new ProductResponse(ResponseType.REMOTE_SERVICE, products);
+
     }
 
 

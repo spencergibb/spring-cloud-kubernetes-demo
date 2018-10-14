@@ -3,35 +3,29 @@ package com.example.chaos.monkey.shopping.gateway.commands;
 import com.example.chaos.monkey.shopping.domain.Product;
 import com.example.chaos.monkey.shopping.gateway.domain.ProductResponse;
 import com.example.chaos.monkey.shopping.gateway.domain.ResponseType;
+import com.example.chaos.monkey.shopping.gateway.services.HotDealsService;
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
-import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.http.HttpMethod;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.Collections;
-import java.util.List;
 
 /**
  * @author Benjamin Wilms
  */
 public class HotDealsCommand extends HystrixCommand<ProductResponse> {
 
-    private final RestTemplate restTemplate;
-    private final String url;
 
-    public HotDealsCommand(HystrixCommandGroupKey group, int timeout, RestTemplate restTemplate,
-                           String url) {
+    private final HotDealsService hotDealsService;
+
+    public HotDealsCommand(HystrixCommandGroupKey group, int timeout, HotDealsService hotDealsService) {
         super(group, timeout);
-        this.restTemplate = restTemplate;
-        this.url = url;
+        this.hotDealsService = hotDealsService;
     }
 
-    protected ProductResponse run() throws Exception {
+    protected ProductResponse run() {
         ProductResponse response = new ProductResponse();
 
-        response.setProducts(restTemplate.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<List<Product>>() {
-        }).getBody());
+        response.setProducts(hotDealsService.getHotDeals());
 
         response.setResponseType(ResponseType.REMOTE_SERVICE);
 
