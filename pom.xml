@@ -21,7 +21,7 @@
 
     <properties>
         <!--Docker Container Image Prefix -->
-        <docker.image.prefix>mrbwilms</docker.image.prefix>
+        <docker.image.prefix>ryanjbaxter</docker.image.prefix>
         <docker-maven-plugin.version>1.4.3</docker-maven-plugin.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -113,7 +113,7 @@
                     <version>${docker-maven-plugin.version}</version>
 
                     <configuration>
-                        <repository>${project.artifactId}</repository>
+                        <repository>${docker.image.prefix}/${project.artifactId}</repository>
                         <buildArgs>
                             <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
                             <SERVICE_NAME>${project.name}</SERVICE_NAME>

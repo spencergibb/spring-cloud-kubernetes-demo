@@ -24,4 +24,19 @@ public class Startpage {
     private ProductResponse fashionResponse;
     private ProductResponse toysResponse;
     private ProductResponse hotDealsResponse;
+
+    public void setFashionResponse(ProductResponse fashionResponse) {
+        this.setStatusFashion(fashionResponse.getResponseType().name());
+        this.fashionResponse = fashionResponse;
+    }
+
+    public void setToysResponse(ProductResponse toysResponse) {
+        this.setStatusToys(toysResponse.getResponseType().name());
+        this.toysResponse = toysResponse;
+    }
+
+    public void setHotDealsResponse(ProductResponse hotDealsResponse) {
+        this.setStatusHotDeals(hotDealsResponse.getResponseType().name());
+        this.hotDealsResponse = hotDealsResponse;
+    }
 }
