@@ -18,7 +18,7 @@ chaos:
       restController: true
       service: false
     assaults:
-      latency-active: false
+      latency-active: true
 
 # Spring Boot Actuator Endpoint Chaos Monkey for Spring Boot
 management:
@@ -28,7 +28,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: chaosmonkey
+        include: '*'
 eureka:
   client:
     serviceUrl:

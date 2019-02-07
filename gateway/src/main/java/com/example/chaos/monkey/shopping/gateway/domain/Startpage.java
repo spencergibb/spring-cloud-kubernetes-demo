@@ -39,4 +39,16 @@ public class Startpage {
         this.setStatusHotDeals(hotDealsResponse.getResponseType().name());
         this.hotDealsResponse = hotDealsResponse;
     }
+
+    public void setStatusFashion(String status) {
+        this.statusFashion = status;
+    }
+
+    public void setStatusToys(String statusToys) {
+        this.statusToys = statusToys;
+    }
+
+    public void setStatusHotDeals(String status) {
+        this.statusHotDeals = status;
+    }
 }
