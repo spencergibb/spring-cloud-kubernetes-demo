@@ -13,3 +13,4 @@ spring:
       discovery:
         locator:
           lowerCaseServiceId: true
+          enabled: true
