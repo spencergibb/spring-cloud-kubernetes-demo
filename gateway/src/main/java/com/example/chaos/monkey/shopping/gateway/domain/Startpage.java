@@ -11,9 +11,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  * @author Benjamin Wilms
  */
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
+//@NoArgsConstructor
+//@AllArgsConstructor
+//@Data
 @JsonPropertyOrder({ "fashionResponse", "toysResponse", "hotDealsResponse", "duration", "statusFashion","statusToys","statusHotDeals" })
 public class Startpage {
 
@@ -50,5 +50,9 @@ public class Startpage {
 
     public void setStatusHotDeals(String status) {
         this.statusHotDeals = status;
+    }
+
+    public void setDuration(long duration) {
+        this.duration = duration;
     }
 }
