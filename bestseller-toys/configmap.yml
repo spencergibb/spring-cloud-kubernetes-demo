@@ -3,4 +3,4 @@ apiVersion: v1
 metadata:
   name: toys-bestseller
 data:
-  chaos.monkey.enabled: false
+  chaos.monkey.enabled: "false"
