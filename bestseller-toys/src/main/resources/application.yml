@@ -10,8 +10,7 @@ spring:
     name: toys-bestseller
   cloud:
     kubernetes:
-      reload:
-        enabled: true
+      enabled: false
 
 
 # Configure Chaos Monkey - enabled = false
