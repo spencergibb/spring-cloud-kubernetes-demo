@@ -55,4 +55,28 @@ public class Startpage {
     public void setDuration(long duration) {
         this.duration = duration;
     }
+
+    public String getStatusFashion() {
+        return statusFashion;
+    }
+
+    public String getStatusToys() {
+        return statusToys;
+    }
+
+    public String getStatusHotDeals() {
+        return statusHotDeals;
+    }
+
+    public ProductResponse getFashionResponse() {
+        return fashionResponse;
+    }
+
+    public ProductResponse getToysResponse() {
+        return toysResponse;
+    }
+
+    public ProductResponse getHotDealsResponse() {
+        return hotDealsResponse;
+    }
 }
