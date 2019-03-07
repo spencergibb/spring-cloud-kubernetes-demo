@@ -20,6 +20,9 @@ spec:
       containers:
         - image: ryanjbaxter/bestseller-fashion
           name: fashion-bestseller
+          env:
+          - name: SPRING_PROFILES_ACTIVE
+            value: docker,kubernetes
           ports:
             - containerPort: 8082
               protocol: TCP

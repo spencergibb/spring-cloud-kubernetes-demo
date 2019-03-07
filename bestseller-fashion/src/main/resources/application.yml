@@ -22,6 +22,9 @@ spring:
     active: chaos-monkey
   application:
     name: fashion-bestseller
+  cloud:
+    kubernetes:
+      enabled: false
 eureka:
   client:
     serviceUrl:

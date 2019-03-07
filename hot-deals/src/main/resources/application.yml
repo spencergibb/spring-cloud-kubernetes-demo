@@ -22,6 +22,9 @@ spring:
     active: chaos-monkey
   application:
     name: hotdeals
+  cloud:
+    kubernetes:
+      enabled: false
 eureka:
   client:
     serviceUrl:
