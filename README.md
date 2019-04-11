@@ -43,7 +43,7 @@ your own please edit the files.**
 kubectl create --filename chaos-monkey-spring-boot-demo/bestseller-toys/configmap.yml
 kubectl create --filename chaos-monkey-spring-boot-demo/bestseller-toys/bestseller-toys-deployment.yml
 kubectl create --filename chaos-monkey-spring-boot-demo/bestseller-fashion/bestseller-fashion-deployment.yml
-kubectl create --filename chaos-monkey-spring-boot-demo/hotdeals/hot-deals-deployment.yml
+kubectl create --filename chaos-monkey-spring-boot-demo/hot-deals/hot-deals-deployment.yml
 kubectl create --filename chaos-monkey-spring-boot-demo/gateway/gateway-deployment.yml
 ```
 
