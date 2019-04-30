@@ -20,9 +20,6 @@ spec:
       containers:
         - image: ryanjbaxter/gateway
           name: gateway
-          env:
-          - name: SPRING_PROFILES_ACTIVE
-            value: kubernetes
           ports:
             - containerPort: 8070
               protocol: TCP

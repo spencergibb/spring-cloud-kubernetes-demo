@@ -20,9 +20,6 @@ spec:
       containers:
         - image: ryanjbaxter/hot-deals
           name: hotdeals
-          env:
-          - name: SPRING_PROFILES_ACTIVE
-            value: docker,kubernetes
           ports:
             - containerPort: 8083
               protocol: TCP

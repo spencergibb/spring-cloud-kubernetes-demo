@@ -20,9 +20,6 @@ spec:
       containers:
         - image: ryanjbaxter/bestseller-toys
           name: toys-bestseller
-          env:
-          - name: SPRING_PROFILES_ACTIVE
-            value: chaos-monkey,docker,kubernetes
           ports:
             - containerPort: 8081
               protocol: TCP
