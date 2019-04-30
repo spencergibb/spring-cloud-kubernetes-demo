@@ -1,5 +1,6 @@
 package com.example.chaos.monkey.shopping.gateway;
 
+import io.ap4k.kubernetes.annotation.KubernetesApplication;
 import reactor.core.publisher.Mono;
 
 import java.util.Collections;
@@ -27,6 +28,7 @@ import com.example.chaos.monkey.shopping.gateway.domain.Startpage;
 @SpringBootApplication
 @RestController
 @EnableDiscoveryClient
+@KubernetesApplication
 public class GatewayApplication {
 
 	public static void main(String[] args) {

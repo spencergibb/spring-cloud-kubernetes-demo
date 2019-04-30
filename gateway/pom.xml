@@ -14,6 +14,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>io.ap4k</groupId>
+            <artifactId>kubernetes-spring-starter</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
