@@ -9,8 +9,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>hot-deals</module>
-        <module>bestseller-fashion</module>
-        <module>bestseller-toys</module>
+        <module>fashion-bestseller</module>
+        <module>toys-bestseller</module>
         <module>gateway</module>
         <module>shared</module>
     </modules>
@@ -25,8 +25,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <spring-boot-dependencies.version>2.1.2.RELEASE</spring-boot-dependencies.version>
-        <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+        <spring-boot-dependencies.version>2.1.5.RELEASE</spring-boot-dependencies.version>
+        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
         <lombok.version>1.16.20</lombok.version>
         <chaos-monkey-spring-boot.version>2.0.2</chaos-monkey-spring-boot.version>
     </properties>
