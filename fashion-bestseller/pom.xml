@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>bestseller-fashion</artifactId>
+    <artifactId>fashion-bestseller</artifactId>
     <name>fashion</name>
 
     <dependencies>
