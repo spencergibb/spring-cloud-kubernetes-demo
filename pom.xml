@@ -116,6 +116,7 @@
                             <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
                             <SERVICE_NAME>${project.name}</SERVICE_NAME>
                         </buildArgs>
+                        <tag>${project.version}</tag>
                         <pullNewerImage>false</pullNewerImage>
                     </configuration>
                     <executions>
