@@ -1,5 +1,7 @@
-# chaos-monkey-spring-boot-demo
-Demo of Chaos Monkey for Spring Boot Using Spring Cloud Kubernetes
+# Spring Cloud Kubernetes Demo
+Demo of Spring Cloud Kubernetes.
+
+Includes Chaos Monkey for Spring Boot
 
 # Building The Containers
 
