@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.example.chaos.monkey.shopping</groupId>
-    <artifactId>shopping-parent</artifactId>
+    <groupId>com.example.springcloud.kubernetes</groupId>
+    <artifactId>spring-cloud-kubernetes-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>hot-deals</module>
@@ -19,14 +19,14 @@
 
     <properties>
         <!--Docker Container Image Prefix -->
-        <docker.image.prefix>ryanjbaxter</docker.image.prefix>
+        <docker.image.prefix>spencergibb</docker.image.prefix>
         <docker-maven-plugin.version>1.4.3</docker-maven-plugin.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <spring-boot-dependencies.version>2.1.5.RELEASE</spring-boot-dependencies.version>
-        <spring-cloud.version>Greenwich.BUILD-SNAPSHOT</spring-cloud.version>
+        <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
         <lombok.version>1.16.20</lombok.version>
         <chaos-monkey-spring-boot.version>2.0.2</chaos-monkey-spring-boot.version>
     </properties>
@@ -52,11 +52,6 @@
                 <groupId>de.codecentric</groupId>
                 <artifactId>chaos-monkey-spring-boot</artifactId>
                 <version>${chaos-monkey-spring-boot.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.netflix.hystrix</groupId>
-                <artifactId>hystrix-core</artifactId>
-                <version>1.5.12</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -86,7 +81,11 @@
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>io.ap4k</groupId>
+                <artifactId>kubernetes-spring-starter</artifactId>
+                <version>0.4.4</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

@@ -1,6 +1,7 @@
 server:
   port: 8081
 
+debug: true
 
 # Init Chaos Monkey for Spring Boot by profile
 spring:
@@ -40,3 +41,6 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+logging:
+  level:
+    org.springframework: TRACE

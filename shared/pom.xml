@@ -3,8 +3,8 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>shopping-parent</artifactId>
-        <groupId>com.example.chaos.monkey.shopping</groupId>
+        <groupId>com.example.springcloud.kubernetes</groupId>
+        <artifactId>spring-cloud-kubernetes-demo</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
