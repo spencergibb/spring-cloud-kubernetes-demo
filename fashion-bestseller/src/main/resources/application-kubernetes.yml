@@ -8,11 +8,8 @@ eureka:
   client:
     enabled: false
 
-#ap4k:
-#  kubernetes:
-#    envVars:
-#      - name: SPRING_PROFILES_ACTIVE:
-#        value: choas-monkey,docker,kubernetes
-#    serviceType: NodePort
-#    imagePullPolicy: Always
-#    group: spencergibb
+dekorate:
+  kubernetes:
+    serviceType: NodePort
+    imagePullPolicy: Always
+    group: spencergibb

@@ -82,9 +82,9 @@
                 <version>${lombok.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.ap4k</groupId>
+                <groupId>io.dekorate</groupId>
                 <artifactId>kubernetes-spring-starter</artifactId>
-                <version>0.4.4</version>
+                <version>0.6.1</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

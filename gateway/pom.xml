@@ -42,7 +42,7 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.ap4k</groupId>
+            <groupId>io.dekorate</groupId>
             <artifactId>kubernetes-spring-starter</artifactId>
         </dependency>
         <dependency>

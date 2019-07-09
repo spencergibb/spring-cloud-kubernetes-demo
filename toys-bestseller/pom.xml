@@ -37,7 +37,7 @@
             <artifactId>spring-cloud-starter-kubernetes-config</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.ap4k</groupId>
+            <groupId>io.dekorate</groupId>
             <artifactId>kubernetes-spring-starter</artifactId>
         </dependency>
         <dependency>

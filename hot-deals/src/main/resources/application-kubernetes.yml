@@ -7,3 +7,9 @@ spring:
 eureka:
   client:
     enabled: false
+
+dekorate:
+  kubernetes:
+    serviceType: NodePort
+    imagePullPolicy: Always
+    group: spencergibb

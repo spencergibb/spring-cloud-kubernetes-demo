@@ -20,21 +20,25 @@ public class BestsellerFashionRestController {
 
     @GetMapping("/bestseller")
     public List<Product> getBestsellerProducts() {
-        AtomicLong aLong = new AtomicLong(4);
+        AtomicLong id = new AtomicLong(4);
 
         ProductBuilder productBuilder = new ProductBuilder();
 
-        Product product1 = productBuilder.setCategory(ProductCategory.FASHION).setId(aLong.getAndIncrement()).setName("Bob Mailor Slim Jeans")
+        Product product1 = productBuilder.setCategory(ProductCategory.FASHION).setId(id.getAndIncrement()).setName("Bob Mailor Slim Jeans")
                 .createProduct();
 
-        Product product2 = productBuilder.setCategory(ProductCategory.FASHION).setId(aLong.getAndIncrement()).setName("Lewi's Jeanshose 511 " +
+        Product product2 = productBuilder.setCategory(ProductCategory.FASHION).setId(id.getAndIncrement()).setName("Lewi's Jeanshose 511 " +
                 "Slim Fit")
                 .createProduct();
 
-        Product product3 = productBuilder.setCategory(ProductCategory.FASHION).setId(aLong.getAndIncrement()).setName("Urban Classics T-Shirt " +
+        Product product3 = productBuilder.setCategory(ProductCategory.FASHION).setId(id.getAndIncrement()).setName("Urban Classics T-Shirt " +
                 "Shaped Long Tee")
                 .createProduct();
-        return Arrays.asList(product1, product2, product3);
+
+        Product product4 = productBuilder.setCategory(ProductCategory.FASHION).setId(id.getAndIncrement()).setName("Star Wars T-Shirt " +
+                "Tall")
+                .createProduct();
+        return Arrays.asList(product1, product2, product3, product4);
     }
 
 }
