@@ -4,7 +4,9 @@ import java.util.Collections;
 import java.util.List;
 
 import com.example.chaos.monkey.shopping.domain.Product;
+import io.dekorate.kubernetes.annotation.ImagePullPolicy;
 import io.dekorate.kubernetes.annotation.KubernetesApplication;
+import io.dekorate.kubernetes.annotation.ServiceType;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,7 +19,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@KubernetesApplication( group = "spencergibb" )
+@KubernetesApplication(
+		serviceType = ServiceType.NodePort,
+		imagePullPolicy = ImagePullPolicy.Always,
+		group = "spencergibb" )
 @SpringBootApplication
 @RestController
 @EnableDiscoveryClient
