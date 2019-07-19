@@ -29,6 +29,7 @@
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
         <lombok.version>1.16.20</lombok.version>
         <chaos-monkey-spring-boot.version>2.0.2</chaos-monkey-spring-boot.version>
+        <dekorate.version>0.7.2</dekorate.version>
     </properties>
 
     <dependencyManagement>
@@ -84,7 +85,7 @@
             <dependency>
                 <groupId>io.dekorate</groupId>
                 <artifactId>kubernetes-spring-starter</artifactId>
-                <version>0.6.1</version>
+                <version>${dekorate.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
